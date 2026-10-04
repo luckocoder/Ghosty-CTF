@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Voye fichye | Ghosty CTF{% endblock %}
+{% block content %}
+  <h1>Defi 5: Voye fichye</h1>
+  <p>Voye yon fichye, epi sèvi ak lyen pou lanse a pou teste l nan similatè a.</p>
+  <form method="post" enctype="multipart/form-data" class="card card-body mb-4" style="max-width: 36rem">
+    <label for="file" class="form-label">Chwazi yon fichye</label>
+    <input id="file" name="file" type="file" class="form-control mb-3" required>
+    <button class="btn btn-primary align-self-start" type="submit">Voye fichye a</button>
+  </form>
+  {% if files %}
+    <h2 class="h5">Fichye ki voye yo</h2>
+    <ul>
+      {% for filename in files %}
+        <li>
+          <a href="{{ url_for('static', filename='uploads/' ~ filename) }}">{{ filename }}</a>
+          — <a href="{{ url_for('run_upload', file=filename) }}">Lanse nan similatè a</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% if result is not none %}
+    <h2 class="h5">Rezilta similatè a</h2>
+    <pre class="bg-dark text-light p-3 rounded">{{ result }}</pre>
+  {% endif %}
+{% endblock %}

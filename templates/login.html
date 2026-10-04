@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Konekte | Ghosty CTF{% endblock %}
+{% block content %}
+  <h1>Defi 2: Konekte</h1>
+  <p>Konekte pou kontinye.</p>
+  <form method="post" class="card card-body" style="max-width: 32rem">
+    <label for="username" class="form-label">Non itilizatè</label>
+    <input id="username" name="username" class="form-control mb-3" autocomplete="username" required>
+    <label for="password" class="form-label">Modpas</label>
+    <input id="password" name="password" type="password" class="form-control mb-3" autocomplete="current-password" required>
+    <button class="btn btn-primary" type="submit">Konekte</button>
+  </form>
+{% endblock %}

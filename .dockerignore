@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.py[cod]
+ctf.sqlite3
+static/uploads/

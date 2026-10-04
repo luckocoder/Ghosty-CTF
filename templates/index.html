@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Defi yo | Ghosty CTF{% endblock %}
+{% block content %}
+  <h1 class="mb-2">Lis defi yo</h1>
+  <p class="text-muted mb-4">Chwazi yon defi pou kòmanse. Bon rechèch!</p>
+  <div class="row g-3">
+    {% for title, description, link in challenges %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="h5">{{ title }}</h2>
+            <p class="card-text">{{ description }}</p>
+            <a class="btn btn-primary" href="{{ link }}">Louvri defi a</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

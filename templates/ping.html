@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Zouti rezo | Ghosty CTF{% endblock %}
+{% block content %}
+  <h1>Defi 4: Dyagnostik rezo</h1>
+  <p>Antre non yon òdinatè oswa yon adrès IP pou fè yon ping similé.</p>
+  <form method="post" class="card card-body mb-3" style="max-width: 36rem">
+    <label for="hostname" class="form-label">Non òdinatè a oswa adrès IP la</label>
+    <input id="hostname" name="hostname" class="form-control mb-3" placeholder="127.0.0.1" required>
+    <button class="btn btn-primary align-self-start" type="submit">Teste koneksyon an</button>
+  </form>
+  {% if result is not none %}
+    <h2 class="h5">Rezilta</h2>
+    <pre class="bg-dark text-light p-3 rounded">{{ result }}</pre>
+  {% endif %}
+{% endblock %}

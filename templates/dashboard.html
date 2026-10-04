@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Byenveni | Ghosty CTF{% endblock %}
+{% block content %}
+  <h1>Byenveni, {{ username }}!</h1>
+  <p>Ou konekte kounye a.</p>
+  {% if flag %}
+    <div class="alert alert-success"><strong>Drapo:</strong> <code>{{ flag }}</code></div>
+  {% endif %}
+  <p><a href="{{ url_for('profile', user_id=session['user_id']) }}">Gade pwofil ou</a></p>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Pwofil | Ghosty CTF{% endblock %}
+{% block content %}
+  <h1>Defi 3: Pwofil</h1>
+  {% if profile %}
+    <div class="card" style="max-width: 36rem">
+      <div class="card-body">
+        <h2 class="h5">{{ profile["username"] }} (itilizatè {{ profile["id"] }})</h2>
+        <p class="mb-0">{{ profile["bio"] }}</p>
+      </div>
+    </div>
+  {% else %}
+    <p>Pwofil sa a pa egziste.</p>
+  {% endif %}
+{% endblock %}
